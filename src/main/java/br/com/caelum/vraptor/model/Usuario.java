@@ -1,19 +1,14 @@
 package br.com.caelum.vraptor.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Usuario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Usuario extends Model {
+	
 	@NotEmpty @Size(min = 4, max = 50)
 	private String nome;
 	@NotEmpty @Email
@@ -24,12 +19,7 @@ public class Usuario {
 	
 	
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
